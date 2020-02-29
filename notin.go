@@ -5,211 +5,211 @@
 // You can obtain one at https://github.com/yudeguang/slice.
 package slice
 
-//返回集合A不在集合B中的所有值，不做去重操作
-func NotIn(a, b []interface{}) []interface{} {
-	result := make([]interface{}, 0, len(a))
-	for _, v := range a {
-		if !Contains(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotIn(m, n []interface{}) (mNotInN []interface{}) {
+	mNotInN = make([]interface{}, 0, len(m))
+	for _, v := range m {
+		if !Contains(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }
 
-//返回集合A不在集合B中的所有值，不做去重操作
-func NotInString(a, b []string) []string {
-	result := make([]string, 0, len(a))
-	for _, v := range a {
-		if !ContainsString(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInString(m, n []string) (mNotInN []string) {
+	mNotInN = make([]string, 0, len(m))
+	for _, v := range m {
+		if !ContainsString(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }
 
-//返回去重复后两个切片的交集
-func NotInInt(a, b []int) []int {
-	result := make([]int, 0, len(a))
-	for _, v := range a {
-		if !ContainsInt(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInInt(m, n []int) (mNotInN []int) {
+	mNotInN = make([]int, 0, len(m))
+	for _, v := range m {
+		if !ContainsInt(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }
 
-//返回去重复后两个切片的交集
-func NotInInt8(a, b []int8) []int8 {
-	result := make([]int8, 0, len(a))
-	for _, v := range a {
-		if !ContainsInt8(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInInt8(m, n []int8) (mNotInN []int8) {
+	mNotInN = make([]int8, 0, len(m))
+	for _, v := range m {
+		if !ContainsInt8(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }
 
-//返回去重复后两个切片的交集
-func NotInInt16(a, b []int16) []int16 {
-	result := make([]int16, 0, len(a))
-	for _, v := range a {
-		if !ContainsInt16(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInInt16(m, n []int16) (mNotInN []int16) {
+	mNotInN = make([]int16, 0, len(m))
+	for _, v := range m {
+		if !ContainsInt16(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }
 
-//返回去重复后两个切片的交集
-func NotInInt32(a, b []int32) []int32 {
-	result := make([]int32, 0, len(a))
-	for _, v := range a {
-		if !ContainsInt32(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInInt32(m, n []int32) (mNotInN []int32) {
+	mNotInN = make([]int32, 0, len(m))
+	for _, v := range m {
+		if !ContainsInt32(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }
 
-//返回去重复后两个切片的交集
-func NotInInt64(a, b []int64) []int64 {
-	result := make([]int64, 0, len(a))
-	for _, v := range a {
-		if !ContainsInt64(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInInt64(m, n []int64) (mNotInN []int64) {
+	mNotInN = make([]int64, 0, len(m))
+	for _, v := range m {
+		if !ContainsInt64(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }
 
-//返回去重复后两个切片的交集
-func NotInUint(a, b []uint) []uint {
-	result := make([]uint, 0, len(a))
-	for _, v := range a {
-		if !ContainsUint(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInUint(m, n []uint) (mNotInN []uint) {
+	mNotInN = make([]uint, 0, len(m))
+	for _, v := range m {
+		if !ContainsUint(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }
 
-//返回去重复后两个切片的交集
-func NotInUint8(a, b []uint8) []uint8 {
-	result := make([]uint8, 0, len(a))
-	for _, v := range a {
-		if !ContainsUint8(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInUint8(m, n []uint8) (mNotInN []uint8) {
+	mNotInN = make([]uint8, 0, len(m))
+	for _, v := range m {
+		if !ContainsUint8(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }
 
-//返回去重复后两个切片的交集
-func NotInUint16(a, b []uint16) []uint16 {
-	result := make([]uint16, 0, len(a))
-	for _, v := range a {
-		if !ContainsUint16(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInUint16(m, n []uint16) (mNotInN []uint16) {
+	mNotInN = make([]uint16, 0, len(m))
+	for _, v := range m {
+		if !ContainsUint16(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }
 
-//返回去重复后两个切片的交集
-func NotInUint32(a, b []uint32) []uint32 {
-	result := make([]uint32, 0, len(a))
-	for _, v := range a {
-		if !ContainsUint32(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInUint32(m, n []uint32) (mNotInN []uint32) {
+	mNotInN = make([]uint32, 0, len(m))
+	for _, v := range m {
+		if !ContainsUint32(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }
 
-//返回去重复后两个切片的交集
-func NotInUint64(a, b []uint64) []uint64 {
-	result := make([]uint64, 0, len(a))
-	for _, v := range a {
-		if !ContainsUint64(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInUint64(m, n []uint64) (mNotInN []uint64) {
+	mNotInN = make([]uint64, 0, len(m))
+	for _, v := range m {
+		if !ContainsUint64(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }
 
-//返回去重复后两个切片的交集
-func NotInUintptr(a, b []uintptr) []uintptr {
-	result := make([]uintptr, 0, len(a))
-	for _, v := range a {
-		if !ContainsUintptr(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInUintptr(m, n []uintptr) (mNotInN []uintptr) {
+	mNotInN = make([]uintptr, 0, len(m))
+	for _, v := range m {
+		if !ContainsUintptr(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }
 
-//返回去重复后两个切片的交集
-func NotInFloat32(a, b []float32) []float32 {
-	result := make([]float32, 0, len(a))
-	for _, v := range a {
-		if !ContainsFloat32(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInFloat32(m, n []float32) (mNotInN []float32) {
+	mNotInN = make([]float32, 0, len(m))
+	for _, v := range m {
+		if !ContainsFloat32(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }
 
-//返回去重复后两个切片的交集
-func NotInFloat64(a, b []float64) []float64 {
-	result := make([]float64, 0, len(a))
-	for _, v := range a {
-		if !ContainsFloat64(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInFloat64(m, n []float64) (mNotInN []float64) {
+	mNotInN = make([]float64, 0, len(m))
+	for _, v := range m {
+		if !ContainsFloat64(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }
 
-//返回去重复后两个切片的交集
-func NotInRune(a, b []rune) []rune {
-	result := make([]rune, 0, len(a))
-	for _, v := range a {
-		if !ContainsRune(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInRune(m, n []rune) (mNotInN []rune) {
+	mNotInN = make([]rune, 0, len(m))
+	for _, v := range m {
+		if !ContainsRune(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }
 
-//返回去重复后两个切片的交集
-func NotInByte(a, b []byte) []byte {
-	result := make([]byte, 0, len(a))
-	for _, v := range a {
-		if !ContainsByte(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInByte(m, n []byte) (mNotInN []byte) {
+	mNotInN = make([]byte, 0, len(m))
+	for _, v := range m {
+		if !ContainsByte(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }
 
-//返回去重复后两个切片的交集
-func NotInComplex64(a, b []complex64) []complex64 {
-	result := make([]complex64, 0, len(a))
-	for _, v := range a {
-		if !ContainsComplex64(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInComplex64(m, n []complex64) (mNotInN []complex64) {
+	mNotInN = make([]complex64, 0, len(m))
+	for _, v := range m {
+		if !ContainsComplex64(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }
 
-//返回去重复后两个切片的交集
-func NotInComplex128(a, b []complex128) []complex128 {
-	result := make([]complex128, 0, len(a))
-	for _, v := range a {
-		if !ContainsComplex128(b, v) {
-			result = append(result, v)
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInComplex128(m, n []complex128) (mNotInN []complex128) {
+	mNotInN = make([]complex128, 0, len(m))
+	for _, v := range m {
+		if !ContainsComplex128(n, v) {
+			mNotInN = append(mNotInN, v)
 		}
 	}
-	return result
+	return mNotInN
 }

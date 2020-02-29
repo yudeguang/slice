@@ -5,389 +5,173 @@
 // You can obtain one at https://github.com/yudeguang/slice.
 package slice
 
-import (
-	"github.com/yudeguang/hashset"
-)
-
-//当数量较大时，一般大于1024左右set会有更高的效率
-//获得两个切片去重后的合集
-func Union(a, b []interface{}) []interface{} {
-
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetAny{Items: make(map[interface{}]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := Distinct(a), Distinct(b)
-		for _, v := range distinctA {
-			if !Contains(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
-
+//获得两个切片去重后的合集,也即m+n，注意union 与 union all的区别，这里并不实现union all
+func Union(m, n []interface{}) []interface{} {
+	result := make([]interface{}, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return Distinct(result)
 }
 
-//获得两个切片去重后的合集
-func UnionString(a, b []string) []string {
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetString{Items: make(map[string]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := DistinctString(a), DistinctString(b)
-		for _, v := range distinctA {
-			if !ContainsString(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
+//获得两个切片去重后的合集,也即m+n，注意union 与 union all的区别，这里并不实现union all
+func UnionString(m, n []string) []string {
+	result := make([]string, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return DistinctString(result)
 }
 
-//返回去重复后两个切片的交集
-func UnionInt(a, b []int) []int {
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetInt{Items: make(map[int]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := DistinctInt(a), DistinctInt(b)
-		for _, v := range distinctA {
-			if !ContainsInt(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
+//返回去重复后两个切片的并集
+func UnionInt(m, n []int) []int {
+	result := make([]int, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return DistinctInt(result)
 }
 
-//返回去重复后两个切片的交集
-func UnionInt8(a, b []int8) []int8 {
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetInt8{Items: make(map[int8]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := DistinctInt8(a), DistinctInt8(b)
-		for _, v := range distinctA {
-			if !ContainsInt8(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
+//返回去重复后两个切片的并集
+func UnionInt8(m, n []int8) []int8 {
+	result := make([]int8, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return DistinctInt8(result)
 }
 
-//返回去重复后两个切片的交集
-func UnionInt16(a, b []int16) []int16 {
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetInt16{Items: make(map[int16]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := DistinctInt16(a), DistinctInt16(b)
-		for _, v := range distinctA {
-			if !ContainsInt16(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
+//返回去重复后两个切片的并集
+func UnionInt16(m, n []int16) []int16 {
+	result := make([]int16, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return DistinctInt16(result)
 }
 
-//返回去重复后两个切片的交集
-func UnionInt32(a, b []int32) []int32 {
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetInt32{Items: make(map[int32]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := DistinctInt32(a), DistinctInt32(b)
-		for _, v := range distinctA {
-			if !ContainsInt32(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
+//返回去重复后两个切片的并集
+func UnionInt32(m, n []int32) []int32 {
+	result := make([]int32, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return DistinctInt32(result)
 }
 
-//返回去重复后两个切片的交集
-func UnionInt64(a, b []int64) []int64 {
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetInt64{Items: make(map[int64]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := DistinctInt64(a), DistinctInt64(b)
-		for _, v := range distinctA {
-			if !ContainsInt64(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
+//返回去重复后两个切片的并集
+func UnionInt64(m, n []int64) []int64 {
+	result := make([]int64, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return DistinctInt64(result)
 }
 
-//返回去重复后两个切片的交集
-func UnionUint(a, b []uint) []uint {
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetUint{Items: make(map[uint]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := DistinctUint(a), DistinctUint(b)
-		for _, v := range distinctA {
-			if !ContainsUint(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
+//返回去重复后两个切片的并集
+func UnionUint(m, n []uint) []uint {
+	result := make([]uint, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return DistinctUint(result)
 }
 
-//返回去重复后两个切片的交集
-func UnionUint8(a, b []uint8) []uint8 {
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetUint8{Items: make(map[uint8]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := DistinctUint8(a), DistinctUint8(b)
-		for _, v := range distinctA {
-			if !ContainsUint8(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
+//返回去重复后两个切片的并集
+func UnionUint8(m, n []uint8) []uint8 {
+	result := make([]uint8, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return DistinctUint8(result)
 }
 
-//返回去重复后两个切片的交集
-func UnionUint16(a, b []uint16) []uint16 {
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetUint16{Items: make(map[uint16]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := DistinctUint16(a), DistinctUint16(b)
-		for _, v := range distinctA {
-			if !ContainsUint16(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
+//返回去重复后两个切片的并集
+func UnionUint16(m, n []uint16) []uint16 {
+	result := make([]uint16, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return DistinctUint16(result)
 }
 
-//返回去重复后两个切片的交集
-func UnionUint32(a, b []uint32) []uint32 {
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetUint32{Items: make(map[uint32]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := DistinctUint32(a), DistinctUint32(b)
-		for _, v := range distinctA {
-			if !ContainsUint32(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
+//返回去重复后两个切片的并集
+func UnionUint32(m, n []uint32) []uint32 {
+	result := make([]uint32, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return DistinctUint32(result)
 }
 
-//返回去重复后两个切片的交集
-func UnionUint64(a, b []uint64) []uint64 {
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetUint64{Items: make(map[uint64]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := DistinctUint64(a), DistinctUint64(b)
-		for _, v := range distinctA {
-			if !ContainsUint64(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
+//返回去重复后两个切片的并集
+func UnionUint64(m, n []uint64) []uint64 {
+	result := make([]uint64, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return DistinctUint64(result)
 }
 
-//返回去重复后两个切片的交集
-func UnionUintptr(a, b []uintptr) []uintptr {
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetUintptr{Items: make(map[uintptr]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := DistinctUintptr(a), DistinctUintptr(b)
-		for _, v := range distinctA {
-			if !ContainsUintptr(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
+//返回去重复后两个切片的并集
+func UnionUintptr(m, n []uintptr) []uintptr {
+	result := make([]uintptr, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return DistinctUintptr(result)
 }
 
-//返回去重复后两个切片的交集
-func UnionFloat32(a, b []float32) []float32 {
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetFloat32{Items: make(map[float32]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := DistinctFloat32(a), DistinctFloat32(b)
-		for _, v := range distinctA {
-			if !ContainsFloat32(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
+//返回去重复后两个切片的并集
+func UnionFloat32(m, n []float32) []float32 {
+	result := make([]float32, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return DistinctFloat32(result)
 }
 
-//返回去重复后两个切片的交集
-func UnionFloat64(a, b []float64) []float64 {
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetFloat64{Items: make(map[float64]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := DistinctFloat64(a), DistinctFloat64(b)
-		for _, v := range distinctA {
-			if !ContainsFloat64(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
+//返回去重复后两个切片的并集
+func UnionFloat64(m, n []float64) []float64 {
+	result := make([]float64, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return DistinctFloat64(result)
 }
 
-//返回去重复后两个切片的交集
-func UnionRune(a, b []rune) []rune {
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetRune{Items: make(map[rune]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := DistinctRune(a), DistinctRune(b)
-		for _, v := range distinctA {
-			if !ContainsRune(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
+//返回去重复后两个切片的并集
+func UnionRune(m, n []rune) []rune {
+	result := make([]rune, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return DistinctRune(result)
 }
 
-//返回去重复后两个切片的交集
-func UnionByte(a, b []byte) []byte {
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetByte{Items: make(map[byte]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := DistinctByte(a), DistinctByte(b)
-		for _, v := range distinctA {
-			if !ContainsByte(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
+//返回去重复后两个切片的并集
+func UnionByte(m, n []byte) []byte {
+	result := make([]byte, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return DistinctByte(result)
 }
 
-//返回去重复后两个切片的交集
-func UnionComplex64(a, b []complex64) []complex64 {
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetComplex64{Items: make(map[complex64]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := DistinctComplex64(a), DistinctComplex64(b)
-		for _, v := range distinctA {
-			if !ContainsComplex64(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
+//返回去重复后两个切片的并集
+func UnionComplex64(m, n []complex64) []complex64 {
+	result := make([]complex64, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return DistinctComplex64(result)
 }
 
-//返回去重复后两个切片的交集
-func UnionComplex128(a, b []complex128) []complex128 {
-	if L := len(a) * len(b); L > bestNum {
-		set := &hashset.SetComplex128{Items: make(map[complex128]struct{}, L)}
-		set.Add(a...)
-		set.Add(b...)
-		result := set.ToSlice()
-		set.Clear()
-		return result
-	} else {
-		distinctA, distinctB := DistinctComplex128(a), DistinctComplex128(b)
-		for _, v := range distinctA {
-			if !ContainsComplex128(distinctB, v) {
-				distinctB = append(distinctB, v)
-			}
-		}
-		return distinctB
-	}
+//返回去重复后两个切片的并集
+func UnionComplex128(m, n []complex128) []complex128 {
+	result := make([]complex128, 0, len(m)+len(n))
+	copy(result, m)
+	copy(result[len(m):], n)
+	//Distinct函数会自动判断是否足够长，会根据程度决定是否启用hashSet算法
+	return DistinctComplex128(result)
 }

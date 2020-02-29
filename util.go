@@ -5,8 +5,10 @@
 // You can obtain one at https://github.com/yudeguang/slice.
 package slice
 
-//去重复等过程中，空间与效率的平衡点，比如对于大于1024个元素的用set去重复
-const bestNum = 1024
+//元素个数超过多少时启用Hash算法，可根据实际情况自行调整该数值
+//在切片的去重取交集等算法中，但元素个数较大时，运用hashSet对应的相关算法性能会更优
+//注意，启用hashSet后，内存占用将会提高
+var HashAlgorithmSwitchNum = 1000
 
 //返回最大值
 func maxInt(args ...int) int {
