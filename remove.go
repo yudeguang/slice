@@ -13,15 +13,15 @@ func fmtCount(count ...int) int {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func Remove(sli []interface{}, v interface{}, count ...int) []interface{} {
+func Remove(s []interface{}, v interface{}, count ...int) []interface{} {
 	n := fmtCount(count...)
-	if len(sli) == 0 || v == nil || n == 0 {
-		return sli
+	if len(s) == 0 || v == nil || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]interface{}, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]interface{}, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -29,15 +29,15 @@ func Remove(sli []interface{}, v interface{}, count ...int) []interface{} {
 		return ret
 	}
 	//删除n次
-	ret := make([]interface{}, 0, len(sli))
+	ret := make([]interface{}, 0, len(s))
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -46,15 +46,15 @@ func Remove(sli []interface{}, v interface{}, count ...int) []interface{} {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveString(sli []string, v string, count ...int) []string {
+func RemoveString(s []string, v string, count ...int) []string {
 	n := fmtCount(count...)
-	if len(sli) == 0 || v == "" || n == 0 {
-		return sli
+	if len(s) == 0 || v == "" || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]string, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]string, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -64,13 +64,13 @@ func RemoveString(sli []string, v string, count ...int) []string {
 	//删除n次
 	ret := []string{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -79,15 +79,15 @@ func RemoveString(sli []string, v string, count ...int) []string {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveInt(sli []int, v int, count ...int) []int {
+func RemoveInt(s []int, v int, count ...int) []int {
 	n := fmtCount(count...)
-	if len(sli) == 0 || n == 0 {
-		return sli
+	if len(s) == 0 || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]int, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]int, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -97,13 +97,13 @@ func RemoveInt(sli []int, v int, count ...int) []int {
 	//删除n次
 	ret := []int{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -112,15 +112,15 @@ func RemoveInt(sli []int, v int, count ...int) []int {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveInt8(sli []int8, v int8, count ...int) []int8 {
+func RemoveInt8(s []int8, v int8, count ...int) []int8 {
 	n := fmtCount(count...)
-	if len(sli) == 0 || n == 0 {
-		return sli
+	if len(s) == 0 || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]int8, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]int8, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -130,13 +130,13 @@ func RemoveInt8(sli []int8, v int8, count ...int) []int8 {
 	//删除n次
 	ret := []int8{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -145,15 +145,15 @@ func RemoveInt8(sli []int8, v int8, count ...int) []int8 {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveInt16(sli []int16, v int16, count ...int) []int16 {
+func RemoveInt16(s []int16, v int16, count ...int) []int16 {
 	n := fmtCount(count...)
-	if len(sli) == 0 || n == 0 {
-		return sli
+	if len(s) == 0 || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]int16, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]int16, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -163,13 +163,13 @@ func RemoveInt16(sli []int16, v int16, count ...int) []int16 {
 	//删除n次
 	ret := []int16{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -178,15 +178,15 @@ func RemoveInt16(sli []int16, v int16, count ...int) []int16 {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveInt32(sli []int32, v int32, count ...int) []int32 {
+func RemoveInt32(s []int32, v int32, count ...int) []int32 {
 	n := fmtCount(count...)
-	if len(sli) == 0 || n == 0 {
-		return sli
+	if len(s) == 0 || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]int32, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]int32, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -196,13 +196,13 @@ func RemoveInt32(sli []int32, v int32, count ...int) []int32 {
 	//删除n次
 	ret := []int32{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -211,15 +211,15 @@ func RemoveInt32(sli []int32, v int32, count ...int) []int32 {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveInt64(sli []int64, v int64, count ...int) []int64 {
+func RemoveInt64(s []int64, v int64, count ...int) []int64 {
 	n := fmtCount(count...)
-	if len(sli) == 0 || n == 0 {
-		return sli
+	if len(s) == 0 || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]int64, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]int64, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -229,13 +229,13 @@ func RemoveInt64(sli []int64, v int64, count ...int) []int64 {
 	//删除n次
 	ret := []int64{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -244,15 +244,15 @@ func RemoveInt64(sli []int64, v int64, count ...int) []int64 {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveUint(sli []uint, v uint, count ...int) []uint {
+func RemoveUint(s []uint, v uint, count ...int) []uint {
 	n := fmtCount(count...)
-	if len(sli) == 0 || n == 0 {
-		return sli
+	if len(s) == 0 || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]uint, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]uint, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -262,13 +262,13 @@ func RemoveUint(sli []uint, v uint, count ...int) []uint {
 	//删除n次
 	ret := []uint{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -277,15 +277,15 @@ func RemoveUint(sli []uint, v uint, count ...int) []uint {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveUint8(sli []uint8, v uint8, count ...int) []uint8 {
+func RemoveUint8(s []uint8, v uint8, count ...int) []uint8 {
 	n := fmtCount(count...)
-	if len(sli) == 0 || n == 0 {
-		return sli
+	if len(s) == 0 || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]uint8, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]uint8, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -295,13 +295,13 @@ func RemoveUint8(sli []uint8, v uint8, count ...int) []uint8 {
 	//删除n次
 	ret := []uint8{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -310,15 +310,15 @@ func RemoveUint8(sli []uint8, v uint8, count ...int) []uint8 {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveUint16(sli []uint16, v uint16, count ...int) []uint16 {
+func RemoveUint16(s []uint16, v uint16, count ...int) []uint16 {
 	n := fmtCount(count...)
-	if len(sli) == 0 || n == 0 {
-		return sli
+	if len(s) == 0 || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]uint16, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]uint16, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -328,13 +328,13 @@ func RemoveUint16(sli []uint16, v uint16, count ...int) []uint16 {
 	//删除n次
 	ret := []uint16{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -343,15 +343,15 @@ func RemoveUint16(sli []uint16, v uint16, count ...int) []uint16 {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveUint32(sli []uint32, v uint32, count ...int) []uint32 {
+func RemoveUint32(s []uint32, v uint32, count ...int) []uint32 {
 	n := fmtCount(count...)
-	if len(sli) == 0 || n == 0 {
-		return sli
+	if len(s) == 0 || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]uint32, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]uint32, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -361,13 +361,13 @@ func RemoveUint32(sli []uint32, v uint32, count ...int) []uint32 {
 	//删除n次
 	ret := []uint32{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -376,15 +376,15 @@ func RemoveUint32(sli []uint32, v uint32, count ...int) []uint32 {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveUint64(sli []uint64, v uint64, count ...int) []uint64 {
+func RemoveUint64(s []uint64, v uint64, count ...int) []uint64 {
 	n := fmtCount(count...)
-	if len(sli) == 0 || n == 0 {
-		return sli
+	if len(s) == 0 || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]uint64, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]uint64, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -394,13 +394,13 @@ func RemoveUint64(sli []uint64, v uint64, count ...int) []uint64 {
 	//删除n次
 	ret := []uint64{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -409,15 +409,15 @@ func RemoveUint64(sli []uint64, v uint64, count ...int) []uint64 {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveUintptr(sli []uintptr, v uintptr, count ...int) []uintptr {
+func RemoveUintptr(s []uintptr, v uintptr, count ...int) []uintptr {
 	n := fmtCount(count...)
-	if len(sli) == 0 || n == 0 {
-		return sli
+	if len(s) == 0 || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]uintptr, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]uintptr, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -427,13 +427,13 @@ func RemoveUintptr(sli []uintptr, v uintptr, count ...int) []uintptr {
 	//删除n次
 	ret := []uintptr{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -442,15 +442,15 @@ func RemoveUintptr(sli []uintptr, v uintptr, count ...int) []uintptr {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveFloat32(sli []float32, v float32, count ...int) []float32 {
+func RemoveFloat32(s []float32, v float32, count ...int) []float32 {
 	n := fmtCount(count...)
-	if len(sli) == 0 || n == 0 {
-		return sli
+	if len(s) == 0 || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]float32, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]float32, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -460,13 +460,13 @@ func RemoveFloat32(sli []float32, v float32, count ...int) []float32 {
 	//删除n次
 	ret := []float32{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -475,15 +475,15 @@ func RemoveFloat32(sli []float32, v float32, count ...int) []float32 {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveFloat64(sli []float64, v float64, count ...int) []float64 {
+func RemoveFloat64(s []float64, v float64, count ...int) []float64 {
 	n := fmtCount(count...)
-	if len(sli) == 0 || n == 0 {
-		return sli
+	if len(s) == 0 || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]float64, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]float64, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -493,13 +493,13 @@ func RemoveFloat64(sli []float64, v float64, count ...int) []float64 {
 	//删除n次
 	ret := []float64{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -508,15 +508,15 @@ func RemoveFloat64(sli []float64, v float64, count ...int) []float64 {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveRune(sli []rune, v rune, count ...int) []rune {
+func RemoveRune(s []rune, v rune, count ...int) []rune {
 	n := fmtCount(count...)
-	if len(sli) == 0 || n == 0 {
-		return sli
+	if len(s) == 0 || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]rune, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]rune, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -526,13 +526,13 @@ func RemoveRune(sli []rune, v rune, count ...int) []rune {
 	//删除n次
 	ret := []rune{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -541,15 +541,15 @@ func RemoveRune(sli []rune, v rune, count ...int) []rune {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveByte(sli []byte, v byte, count ...int) []byte {
+func RemoveByte(s []byte, v byte, count ...int) []byte {
 	n := fmtCount(count...)
-	if len(sli) == 0 || n == 0 {
-		return sli
+	if len(s) == 0 || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]byte, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]byte, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -559,13 +559,13 @@ func RemoveByte(sli []byte, v byte, count ...int) []byte {
 	//删除n次
 	ret := []byte{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -574,15 +574,15 @@ func RemoveByte(sli []byte, v byte, count ...int) []byte {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveBool(sli []bool, v bool, count ...int) []bool {
+func RemoveBool(s []bool, v bool, count ...int) []bool {
 	n := fmtCount(count...)
-	if len(sli) == 0 || n == 0 {
-		return sli
+	if len(s) == 0 || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]bool, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]bool, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -592,13 +592,13 @@ func RemoveBool(sli []bool, v bool, count ...int) []bool {
 	//删除n次
 	ret := []bool{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -607,15 +607,15 @@ func RemoveBool(sli []bool, v bool, count ...int) []bool {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveComplex64(sli []complex64, v complex64, count ...int) []complex64 {
+func RemoveComplex64(s []complex64, v complex64, count ...int) []complex64 {
 	n := fmtCount(count...)
-	if len(sli) == 0 || n == 0 {
-		return sli
+	if len(s) == 0 || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]complex64, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]complex64, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -625,13 +625,13 @@ func RemoveComplex64(sli []complex64, v complex64, count ...int) []complex64 {
 	//删除n次
 	ret := []complex64{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}
@@ -640,15 +640,15 @@ func RemoveComplex64(sli []complex64, v complex64, count ...int) []complex64 {
 }
 
 //返回将sli中前n个子元素v删除后的切片，如果这填，或者n<0会删除所有子元素v
-func RemoveComplex128(sli []complex128, v complex128, count ...int) []complex128 {
+func RemoveComplex128(s []complex128, v complex128, count ...int) []complex128 {
 	n := fmtCount(count...)
-	if len(sli) == 0 || n == 0 {
-		return sli
+	if len(s) == 0 || n == 0 {
+		return s
 	}
 	//全部删除
 	if n < 0 {
-		ret := make([]complex128, 0, len(sli))
-		for _, val := range sli {
+		ret := make([]complex128, 0, len(s))
+		for _, val := range s {
 			if val != v {
 				ret = append(ret, val)
 			}
@@ -658,13 +658,13 @@ func RemoveComplex128(sli []complex128, v complex128, count ...int) []complex128
 	//删除n次
 	ret := []complex128{}
 	t := 0
-	for i, val := range sli {
+	for i, val := range s {
 		if val != v {
 			ret = append(ret, val)
 		} else {
 			t++
 			if t == n {
-				ret = append(ret, sli[i+1:]...)
+				ret = append(ret, s[i+1:]...)
 				break
 			}
 		}

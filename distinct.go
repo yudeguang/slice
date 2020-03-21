@@ -14,7 +14,7 @@ func Distinct(s []interface{}) []interface{} {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.New(s...).ToSlice()
 	}
 	result := make([]interface{}, 0, L)
@@ -34,7 +34,7 @@ func DistinctString(s []string) []string {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.NewString(s...).ToSlice()
 	}
 	result := make([]string, 0, L)
@@ -53,7 +53,7 @@ func DistinctInt(s []int) []int {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.NewInt(s...).ToSlice()
 	}
 	result := make([]int, 0, L)
@@ -72,7 +72,7 @@ func DistinctInt8(s []int8) []int8 {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.NewInt8(s...).ToSlice()
 	}
 	result := make([]int8, 0, L)
@@ -91,7 +91,7 @@ func DistinctInt16(s []int16) []int16 {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.NewInt16(s...).ToSlice()
 	}
 	result := make([]int16, 0, L)
@@ -110,7 +110,7 @@ func DistinctInt32(s []int32) []int32 {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.NewInt32(s...).ToSlice()
 	}
 	result := make([]int32, 0, L)
@@ -129,7 +129,7 @@ func DistinctInt64(s []int64) []int64 {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.NewInt64(s...).ToSlice()
 	}
 	result := make([]int64, 0, L)
@@ -148,7 +148,7 @@ func DistinctUint(s []uint) []uint {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.NewUint(s...).ToSlice()
 	}
 	result := make([]uint, 0, L)
@@ -167,7 +167,7 @@ func DistinctUint8(s []uint8) []uint8 {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.NewUint8(s...).ToSlice()
 	}
 	result := make([]uint8, 0, L)
@@ -186,7 +186,7 @@ func DistinctUint16(s []uint16) []uint16 {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.NewUint16(s...).ToSlice()
 	}
 	result := make([]uint16, 0, L)
@@ -205,7 +205,7 @@ func DistinctUint32(s []uint32) []uint32 {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.NewUint32(s...).ToSlice()
 	}
 	result := make([]uint32, 0, L)
@@ -224,7 +224,7 @@ func DistinctUint64(s []uint64) []uint64 {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.NewUint64(s...).ToSlice()
 	}
 	result := make([]uint64, 0, L)
@@ -243,7 +243,7 @@ func DistinctUintptr(s []uintptr) []uintptr {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.NewUintptr(s...).ToSlice()
 	}
 	result := make([]uintptr, 0, L)
@@ -262,7 +262,7 @@ func DistinctFloat32(s []float32) []float32 {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.NewFloat32(s...).ToSlice()
 	}
 	result := make([]float32, 0, L)
@@ -281,7 +281,7 @@ func DistinctFloat64(s []float64) []float64 {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.NewFloat64(s...).ToSlice()
 	}
 	result := make([]float64, 0, L)
@@ -300,7 +300,7 @@ func DistinctRune(s []rune) []rune {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.NewRune(s...).ToSlice()
 	}
 	result := make([]rune, 0, L)
@@ -319,7 +319,7 @@ func DistinctByte(s []byte) []byte {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.NewByte(s...).ToSlice()
 	}
 	result := make([]byte, 0, L)
@@ -338,7 +338,7 @@ func DistinctComplex64(s []complex64) []complex64 {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.NewComplex64(s...).ToSlice()
 	}
 	result := make([]complex64, 0, L)
@@ -357,7 +357,7 @@ func DistinctComplex128(s []complex128) []complex128 {
 	if L == 0 {
 		return nil
 	}
-	if L > HashAlgorithmSwitchNum {
+	if L > hashAlgorithmSwitchNum {
 		return hashset.NewComplex128(s...).ToSlice()
 	}
 	result := make([]complex128, 0, L)

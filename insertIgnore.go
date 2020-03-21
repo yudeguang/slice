@@ -6,221 +6,221 @@
 package slice
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnore(sli []interface{}, v interface{}) []interface{} {
-	for _, val := range sli {
+func InsertIgnore(s []interface{}, v interface{}) []interface{} {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreString(sli []string, v string) []string {
-	for _, val := range sli {
+func InsertIgnoreString(s []string, v string) []string {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreInt(sli []int, v int) []int {
-	for _, val := range sli {
+func InsertIgnoreInt(s []int, v int) []int {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreInt8(sli []int8, v int8) []int8 {
-	for _, val := range sli {
+func InsertIgnoreInt8(s []int8, v int8) []int8 {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreInt16(sli []int16, v int16) []int16 {
-	for _, val := range sli {
+func InsertIgnoreInt16(s []int16, v int16) []int16 {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreInt32(sli []int32, v int32) []int32 {
-	for _, val := range sli {
+func InsertIgnoreInt32(s []int32, v int32) []int32 {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreInt64(sli []int64, v int64) []int64 {
-	for _, val := range sli {
+func InsertIgnoreInt64(s []int64, v int64) []int64 {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreUint(sli []uint, v uint) []uint {
-	for _, val := range sli {
+func InsertIgnoreUint(s []uint, v uint) []uint {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreUint8(sli []uint8, v uint8) []uint8 {
-	for _, val := range sli {
+func InsertIgnoreUint8(s []uint8, v uint8) []uint8 {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreUint16(sli []uint16, v uint16) []uint16 {
-	for _, val := range sli {
+func InsertIgnoreUint16(s []uint16, v uint16) []uint16 {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreUint32(sli []uint32, v uint32) []uint32 {
-	for _, val := range sli {
+func InsertIgnoreUint32(s []uint32, v uint32) []uint32 {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreUint64(sli []uint64, v uint64) []uint64 {
-	for _, val := range sli {
+func InsertIgnoreUint64(s []uint64, v uint64) []uint64 {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreUintptr(sli []uintptr, v uintptr) []uintptr {
-	for _, val := range sli {
+func InsertIgnoreUintptr(s []uintptr, v uintptr) []uintptr {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreFloat32(sli []float32, v float32) []float32 {
-	for _, val := range sli {
+func InsertIgnoreFloat32(s []float32, v float32) []float32 {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreFloat64(sli []float64, v float64) []float64 {
-	for _, val := range sli {
+func InsertIgnoreFloat64(s []float64, v float64) []float64 {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreRune(sli []rune, v rune) []rune {
-	for _, val := range sli {
+func InsertIgnoreRune(s []rune, v rune) []rune {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreByte(sli []byte, v byte) []byte {
-	for _, val := range sli {
+func InsertIgnoreByte(s []byte, v byte) []byte {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreBool(sli []bool, v bool) []bool {
-	for _, val := range sli {
+func InsertIgnoreBool(s []bool, v bool) []bool {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreComplex64(sli []complex64, v complex64) []complex64 {
-	for _, val := range sli {
+func InsertIgnoreComplex64(s []complex64, v complex64) []complex64 {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreComplex128(sli []complex128, v complex128) []complex128 {
-	for _, val := range sli {
+func InsertIgnoreComplex128(s []complex128, v complex128) []complex128 {
+	for _, val := range s {
 		if val == v {
-			return sli
+			return s
 		}
 	}
-	sli = append(sli, v)
-	return sli
+	s = append(s, v)
+	return s
 }

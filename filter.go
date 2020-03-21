@@ -22,9 +22,9 @@ Students := []Student{
 	Student{"Sandy", 18, 168},
 }
 //循环匹配主函数
-func from(source []Student, condition func(Student) bool) (result []Student) {
-	for _, line := range source {
-		if condition(line) {
+func Filter(from []Student, where func(Student) bool) (result []Student) {
+	for _, line := range from {
+		if where(line) {
 			result = append(result, line)
 		}
 	}
@@ -37,9 +37,9 @@ func Where() func(Student) bool {
 	}
 }
 */
-func From(source []interface{}, conditionFunc func(interface{}) bool) (result []interface{}) {
-	for _, line := range source {
-		if conditionFunc(line) {
+func Filter(from []interface{}, where func(interface{}) bool) (result []interface{}) {
+	for _, line := range from {
+		if where(line) {
 			result = append(result, line)
 		}
 	}

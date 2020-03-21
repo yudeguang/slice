@@ -15,7 +15,7 @@ func InnerJoin(m, n []interface{}) []interface{} {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinAny(hashset.New(m...), hashset.New(n...)).ToSlice()
 	}
 
@@ -35,7 +35,7 @@ func InnerJoinString(m, n []string) []string {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinString(hashset.NewString(m...), hashset.NewString(n...)).ToSlice()
 	}
 	distinctM := DistinctString(m)
@@ -55,7 +55,7 @@ func InnerJoinInt(m, n []int) []int {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinInt(hashset.NewInt(m...), hashset.NewInt(n...)).ToSlice()
 	}
 	distinctM := DistinctInt(m)
@@ -75,7 +75,7 @@ func InnerJoinInt8(m, n []int8) []int8 {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinInt8(hashset.NewInt8(m...), hashset.NewInt8(n...)).ToSlice()
 	}
 	distinctM := DistinctInt8(m)
@@ -95,7 +95,7 @@ func InnerJoinInt16(m, n []int16) []int16 {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinInt16(hashset.NewInt16(m...), hashset.NewInt16(n...)).ToSlice()
 	}
 	distinctM := DistinctInt16(m)
@@ -115,7 +115,7 @@ func InnerJoinInt32(m, n []int32) []int32 {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinInt32(hashset.NewInt32(m...), hashset.NewInt32(n...)).ToSlice()
 	}
 	distinctM := DistinctInt32(m)
@@ -135,7 +135,7 @@ func innerJoinInt64(m, n []int64) []int64 {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinInt64(hashset.NewInt64(m...), hashset.NewInt64(n...)).ToSlice()
 	}
 	distinctM := DistinctInt64(m)
@@ -155,7 +155,7 @@ func innerJoinUint(m, n []uint) []uint {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinUint(hashset.NewUint(m...), hashset.NewUint(n...)).ToSlice()
 	}
 	distinctM := DistinctUint(m)
@@ -175,7 +175,7 @@ func innerJoinUint8(m, n []uint8) []uint8 {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinUint8(hashset.NewUint8(m...), hashset.NewUint8(n...)).ToSlice()
 	}
 	distinctM := DistinctUint8(m)
@@ -195,7 +195,7 @@ func innerJoinUint16(m, n []uint16) []uint16 {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinUint16(hashset.NewUint16(m...), hashset.NewUint16(n...)).ToSlice()
 	}
 	distinctM := DistinctUint16(m)
@@ -215,7 +215,7 @@ func innerJoinUint32(m, n []uint32) []uint32 {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinUint32(hashset.NewUint32(m...), hashset.NewUint32(n...)).ToSlice()
 	}
 	distinctM := DistinctUint32(m)
@@ -235,7 +235,7 @@ func innerJoinUint64(m, n []uint64) []uint64 {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinUint64(hashset.NewUint64(m...), hashset.NewUint64(n...)).ToSlice()
 	}
 	distinctM := DistinctUint64(m)
@@ -255,7 +255,7 @@ func innerJoinUintptr(m, n []uintptr) []uintptr {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinUintptr(hashset.NewUintptr(m...), hashset.NewUintptr(n...)).ToSlice()
 	}
 	distinctM := DistinctUintptr(m)
@@ -275,7 +275,7 @@ func innerJoinFloat32(m, n []float32) []float32 {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinFloat32(hashset.NewFloat32(m...), hashset.NewFloat32(n...)).ToSlice()
 	}
 	distinctM := DistinctFloat32(m)
@@ -295,7 +295,7 @@ func innerJoinFloat64(m, n []float64) []float64 {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinFloat64(hashset.NewFloat64(m...), hashset.NewFloat64(n...)).ToSlice()
 	}
 	distinctM := DistinctFloat64(m)
@@ -315,7 +315,7 @@ func innerJoinRune(m, n []rune) []rune {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinRune(hashset.NewRune(m...), hashset.NewRune(n...)).ToSlice()
 	}
 	distinctM := DistinctRune(m)
@@ -335,7 +335,7 @@ func innerJoinByte(m, n []byte) []byte {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinByte(hashset.NewByte(m...), hashset.NewByte(n...)).ToSlice()
 	}
 	distinctM := DistinctByte(m)
@@ -355,7 +355,7 @@ func innerJoinComplex64(m, n []complex64) []complex64 {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinComplex64(hashset.NewComplex64(m...), hashset.NewComplex64(n...)).ToSlice()
 	}
 	distinctM := DistinctComplex64(m)
@@ -375,7 +375,7 @@ func innerJoinComplex128(m, n []complex128) []complex128 {
 	if len(m) == 0 || len(n) == 0 {
 		return nil
 	}
-	if L := len(m) * len(n); L > HashAlgorithmSwitchNum {
+	if L := len(m) * len(n); L > hashAlgorithmSwitchNum {
 		return hashset.InnerJoinComplex128(hashset.NewComplex128(m...), hashset.NewComplex128(n...)).ToSlice()
 	}
 	distinctM := DistinctComplex128(m)
