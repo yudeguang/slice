@@ -8,8 +8,8 @@ package slice
 //Contains无需启用set，因为初始化成本已经高于遍历一次的成本
 //返回切片sli中是否包含单个元素v
 func Contains(s []interface{}, v interface{}) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
@@ -18,8 +18,8 @@ func Contains(s []interface{}, v interface{}) bool {
 
 //返回切片sli中是否包含单个元素v
 func ContainsString(s []string, v string) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
@@ -28,8 +28,8 @@ func ContainsString(s []string, v string) bool {
 
 //返回切片sli中是否包含单个元素v
 func ContainsInt(s []int, v int) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
@@ -38,8 +38,8 @@ func ContainsInt(s []int, v int) bool {
 
 //返回切片sli中是否包含单个元素v
 func ContainsInt8(s []int8, v int8) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
@@ -48,8 +48,8 @@ func ContainsInt8(s []int8, v int8) bool {
 
 //返回切片sli中是否包含单个元素v
 func ContainsInt16(s []int16, v int16) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
@@ -58,8 +58,8 @@ func ContainsInt16(s []int16, v int16) bool {
 
 //返回切片sli中是否包含单个元素v
 func ContainsInt32(s []int32, v int32) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
@@ -68,8 +68,8 @@ func ContainsInt32(s []int32, v int32) bool {
 
 //返回切片sli中是否包含单个元素v
 func ContainsInt64(s []int64, v int64) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
@@ -78,8 +78,8 @@ func ContainsInt64(s []int64, v int64) bool {
 
 //返回切片sli中是否包含单个元素v
 func ContainsUint(s []uint, v uint) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
@@ -88,8 +88,8 @@ func ContainsUint(s []uint, v uint) bool {
 
 //返回切片sli中是否包含单个元素v
 func ContainsUint8(s []uint8, v uint8) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
@@ -98,8 +98,8 @@ func ContainsUint8(s []uint8, v uint8) bool {
 
 //返回切片sli中是否包含单个元素v
 func ContainsUint16(s []uint16, v uint16) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
@@ -108,8 +108,8 @@ func ContainsUint16(s []uint16, v uint16) bool {
 
 //返回切片sli中是否包含单个元素v
 func ContainsUint32(s []uint32, v uint32) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
@@ -118,8 +118,8 @@ func ContainsUint32(s []uint32, v uint32) bool {
 
 //返回切片sli中是否包含单个元素v
 func ContainsUint64(s []uint64, v uint64) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
@@ -128,8 +128,8 @@ func ContainsUint64(s []uint64, v uint64) bool {
 
 //返回切片sli中是否包含单个元素v
 func ContainsUintptr(s []uintptr, v uintptr) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
@@ -138,8 +138,8 @@ func ContainsUintptr(s []uintptr, v uintptr) bool {
 
 //返回切片sli中是否包含单个元素v
 func ContainsFloat32(s []float32, v float32) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
@@ -148,8 +148,8 @@ func ContainsFloat32(s []float32, v float32) bool {
 
 //返回切片sli中是否包含单个元素v
 func ContainsFloat64(s []float64, v float64) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
@@ -158,8 +158,8 @@ func ContainsFloat64(s []float64, v float64) bool {
 
 //返回切片sli中是否包含单个元素v
 func ContainsRune(s []rune, v rune) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
@@ -168,8 +168,8 @@ func ContainsRune(s []rune, v rune) bool {
 
 //返回切片sli中是否包含单个元素v
 func ContainsByte(s []byte, v byte) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
@@ -178,8 +178,8 @@ func ContainsByte(s []byte, v byte) bool {
 
 //返回切片sli中是否包含单个元素v
 func ContainsComplex64(s []complex64, v complex64) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
@@ -188,8 +188,8 @@ func ContainsComplex64(s []complex64, v complex64) bool {
 
 //返回切片sli中是否包含单个元素v
 func ContainsComplex128(s []complex128, v complex128) bool {
-	for _, vv := range s {
-		if vv == v {
+	for i := range s {
+		if s[i] == v {
 			return true
 		}
 	}
