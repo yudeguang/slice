@@ -7,9 +7,10 @@ InsertIgnore 插入不重复元素
 --删除
 DeleteByElement 根据元素删除(不会改变原有切片)
 DeleteByIndex 根据下标范围删除，也可以只删除单个下标位置的元素(不会改变原有切片)
+
 Distinct 去重复(不会改变原有切片，(元素个数较大时会自动切换为利用hash算法)
 
-Copy 复制
+Copy 安全复制
 
 --集合相关操作
 InnerJoin 内连接(元素个数较大时会自动切换为利用hash算法)
@@ -19,7 +20,7 @@ NotIn 相减--返回mNotInN(元素个数较大时会自动切换为利用hash算
 Left 返回左侧若干元素
 Right 返回右侧若干元素
 
--- 以下函数只改变切片本身
+-- 以下函数只改变切片本身，无返回值
 Reverse 倒序排列
 Shuffling 随机
 Sort 排序
