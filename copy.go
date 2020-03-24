@@ -115,3 +115,8 @@ func CopyComplex64(s []complex64) []complex64 {
 func CopyComplex128(s []complex128) []complex128 {
 	return append(s[:0:0], s...)
 }
+
+//安全的复制切片
+func CopyBool(s []bool) []bool {
+	return append(s[:0:0], s...)
+}

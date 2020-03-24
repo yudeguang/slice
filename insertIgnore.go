@@ -176,16 +176,6 @@ func InsertIgnoreByte(s []byte, v byte) []byte {
 }
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
-func InsertIgnoreBool(s []bool, v bool) []bool {
-	for i := range s {
-		if s[i] == v {
-			return s
-		}
-	}
-	return append(s, v)
-}
-
-//向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
 func InsertIgnoreComplex64(s []complex64, v complex64) []complex64 {
 	for i := range s {
 		if s[i] == v {
@@ -197,6 +187,16 @@ func InsertIgnoreComplex64(s []complex64, v complex64) []complex64 {
 
 //向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
 func InsertIgnoreComplex128(s []complex128, v complex128) []complex128 {
+	for i := range s {
+		if s[i] == v {
+			return s
+		}
+	}
+	return append(s, v)
+}
+
+//向切片Sli中插入没出现过的元素V，如果切片中有V，则不插入
+func InsertIgnoreBool(s []bool, v bool) []bool {
 	for i := range s {
 		if s[i] == v {
 			return s

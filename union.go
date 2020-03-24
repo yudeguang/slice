@@ -99,3 +99,8 @@ func UnionComplex64(m, n []complex64) []complex64 {
 func UnionComplex128(m, n []complex128) []complex128 {
 	return DistinctComplex128(append(append(m[:0:0], m...), n...))
 }
+
+//返回去重复后两个切片的并集
+func UnionBool(m, n []bool) []bool {
+	return DistinctBool(append(append(m[:0:0], m...), n...))
+}

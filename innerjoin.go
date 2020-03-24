@@ -389,3 +389,20 @@ func innerJoinComplex128(m, n []complex128) []complex128 {
 	}
 	return result
 }
+
+//返回去重复后两个切片的交集
+func innerJoinBool(m, n []bool) []bool {
+	if len(m) == 0 || len(n) == 0 {
+		return nil
+	}
+	distinctM := DistinctBool(m)
+	distinctN := DistinctBool(n)
+	lenM := len(distinctM)
+	result := make([]bool, 0, 2)
+	for i := 0; i < lenM; i++ {
+		if ContainsBool(distinctN, distinctM[i]) {
+			result = append(result, distinctM[i])
+		}
+	}
+	return result
+}

@@ -369,3 +369,17 @@ func DistinctComplex128(s []complex128) []complex128 {
 	}
 	return result
 }
+
+//返回去重复后的数据
+func DistinctBool(s []bool) []bool {
+	L := len(s)
+	//bool 去重复后只可能有两个值
+	result := make([]bool, 0, 2)
+	result = append(result, s[0])
+	for i := 1; i < L; i++ {
+		if !ContainsBool(result, s[i]) {
+			result = append(result, s[i])
+		}
+	}
+	return result
+}

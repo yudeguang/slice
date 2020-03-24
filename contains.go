@@ -195,3 +195,13 @@ func ContainsComplex128(s []complex128, v complex128) bool {
 	}
 	return false
 }
+
+//返回切片sli中是否包含单个元素v
+func ContainsBool(s []bool, v bool) bool {
+	for i := range s {
+		if s[i] == v {
+			return true
+		}
+	}
+	return false
+}

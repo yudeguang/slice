@@ -213,3 +213,14 @@ func NotInComplex128(m, n []complex128) (mNotInN []complex128) {
 	}
 	return mNotInN
 }
+
+//返回集合m不在集合n中的所有值，也即m-n，注意在此不对m做去重操作
+func NotInBool(m, n []bool) (mNotInN []bool) {
+	mNotInN = make([]bool, 0, len(m))
+	for _, v := range m {
+		if !ContainsBool(n, v) {
+			mNotInN = append(mNotInN, v)
+		}
+	}
+	return mNotInN
+}

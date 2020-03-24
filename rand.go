@@ -215,18 +215,6 @@ func RandByte(s []byte) []byte {
 }
 
 //返回切片s中是否包含单个元素v
-func RandBool(s []bool) []bool {
-	rand.Seed(time.Now().UnixNano())
-	L := len(s)
-	randedId := rand.Perm(L)
-	randedsce := make([]bool, 0, L)
-	for _, i := range randedId {
-		randedsce = append(randedsce, s[i])
-	}
-	return randedsce
-}
-
-//返回切片s中是否包含单个元素v
 func RandComplex64(s []complex64) []complex64 {
 	rand.Seed(time.Now().UnixNano())
 	L := len(s)
@@ -244,6 +232,18 @@ func RandComplex128(s []complex128) []complex128 {
 	L := len(s)
 	randedId := rand.Perm(L)
 	randedsce := make([]complex128, 0, L)
+	for _, i := range randedId {
+		randedsce = append(randedsce, s[i])
+	}
+	return randedsce
+}
+
+//返回切片s中是否包含单个元素v
+func RandBool(s []bool) []bool {
+	rand.Seed(time.Now().UnixNano())
+	L := len(s)
+	randedId := rand.Perm(L)
+	randedsce := make([]bool, 0, L)
 	for _, i := range randedId {
 		randedsce = append(randedsce, s[i])
 	}

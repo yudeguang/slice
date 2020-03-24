@@ -136,3 +136,10 @@ func SortByte(s []byte) {
 // 	})
 // 	return s
 // }
+
+////切片排序
+// func SortBool(s []bool) {
+// 	sort.Slice(s, func(i, j int) bool {
+// 		return s[i] < s[j]
+// 	})
+// }

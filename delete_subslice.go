@@ -29,97 +29,123 @@ for i := range temp {
 //在此，只实现第一种方法
 
 */
+
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSlice(s []interface{}, from, to int) []interface{} {
-	return append(s[:from], s[to:]...)
+	copyS := Copy(s)
+	return append(copyS[:from], copyS[to:]...)
 }
 
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSliceString(s []string, from, to int) []string {
-	return append(s[:from], s[to:]...)
+	copyS := CopyString(s)
+	return append(copyS[:from], copyS[to:]...)
 }
 
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSliceInt(s []int, from, to int) []int {
-	return append(s[:from], s[to:]...)
+	copyS := CopyInt(s)
+	return append(copyS[:from], copyS[to:]...)
 }
 
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSliceInt8(s []int8, from, to int) []int8 {
-	return append(s[:from], s[to:]...)
+	copyS := CopyInt8(s)
+	return append(copyS[:from], copyS[to:]...)
 }
 
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSliceInt16(s []int16, from, to int) []int16 {
-	return append(s[:from], s[to:]...)
+	copyS := CopyInt16(s)
+	return append(copyS[:from], copyS[to:]...)
 }
 
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSliceInt32(s []int32, from, to int) []int32 {
-	return append(s[:from], s[to:]...)
+	copyS := CopyInt32(s)
+	return append(copyS[:from], copyS[to:]...)
 }
 
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSliceInt64(s []int64, from, to int) []int64 {
-	return append(s[:from], s[to:]...)
+	copyS := CopyInt64(s)
+	return append(copyS[:from], copyS[to:]...)
 }
 
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSliceUint(s []uint, from, to int) []uint {
-	return append(s[:from], s[to:]...)
+	copyS := CopyUint(s)
+	return append(copyS[:from], copyS[to:]...)
 }
 
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSliceUint8(s []uint8, from, to int) []uint8 {
-	return append(s[:from], s[to:]...)
+	copyS := CopyUint8(s)
+	return append(copyS[:from], copyS[to:]...)
 }
 
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSliceUint16(s []uint16, from, to int) []uint16 {
-	return append(s[:from], s[to:]...)
+	copyS := CopyUint16(s)
+	return append(copyS[:from], copyS[to:]...)
 }
 
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSliceUint32(s []uint32, from, to int) []uint32 {
-	return append(s[:from], s[to:]...)
+	copyS := CopyUint32(s)
+	return append(copyS[:from], copyS[to:]...)
 }
 
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSliceUint64(s []uint64, from, to int) []uint64 {
-	return append(s[:from], s[to:]...)
+	copyS := CopyUint64(s)
+	return append(copyS[:from], copyS[to:]...)
 }
 
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSliceUintptr(s []uintptr, from, to int) []uintptr {
-	return append(s[:from], s[to:]...)
+	copyS := CopyUintptr(s)
+	return append(copyS[:from], copyS[to:]...)
 }
 
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSliceFloat32(s []float32, from, to int) []float32 {
-	return append(s[:from], s[to:]...)
+	copyS := CopyFloat32(s)
+	return append(copyS[:from], copyS[to:]...)
 }
 
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSliceFloat64(s []float64, from, to int) []float64 {
-	return append(s[:from], s[to:]...)
+	copyS := CopyFloat64(s)
+	return append(copyS[:from], copyS[to:]...)
 }
 
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSliceRune(s []rune, from, to int) []rune {
-	return append(s[:from], s[to:]...)
+	copyS := CopyRune(s)
+	return append(copyS[:from], copyS[to:]...)
 }
 
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSliceByte(s []byte, from, to int) []byte {
-	return append(s[:from], s[to:]...)
+	copyS := CopyByte(s)
+	return append(copyS[:from], copyS[to:]...)
 }
 
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSliceComplex64(s []complex64, from, to int) []complex64 {
-	return append(s[:from], s[to:]...)
+	copyS := CopyComplex64(s)
+	return append(copyS[:from], copyS[to:]...)
 }
 
 //删除子切片，子切片的位置是从from（包括）到to（不包括）
 func DeleteSubSliceComplex128(s []complex128, from, to int) []complex128 {
-	return append(s[:from], s[to:]...)
+	copyS := CopyComplex128(s)
+	return append(copyS[:from], copyS[to:]...)
+}
+
+//删除子切片，子切片的位置是从from（包括）到to（不包括）
+func DeleteSubSliceBool(s []bool, from, to int) []bool {
+	copyS := CopyBool(s)
+	return append(copyS[:from], copyS[to:]...)
 }

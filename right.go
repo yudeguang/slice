@@ -213,3 +213,14 @@ func RightComplex128(s []complex128, n int) []complex128 {
 	}
 	return s[len(s)-n:]
 }
+
+//返回右往左最多n个元素
+func RightBool(s []bool, n int) []bool {
+	if len(s) < n {
+		return s
+	}
+	if n <= 0 {
+		return nil
+	}
+	return s[len(s)-n:]
+}

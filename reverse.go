@@ -137,3 +137,10 @@ func ReverseComplex128(s []complex128) {
 		s[from], s[to] = s[to], s[from]
 	}
 }
+
+//对切片进行倒序排列
+func ReverseBool(s []bool) {
+	for from, to := 0, len(s)-1; from < to; from, to = from+1, to-1 {
+		s[from], s[to] = s[to], s[from]
+	}
+}
