@@ -1,34 +1,30 @@
-slice包主要用于对于切片的各类操作,是标准库的补充包括：
-```
-Contains 是否包含
+包([github.com/yudeguang/slice](http://github.com/yudeguang/slice "github.com/yudeguang/slice"))，用于切片处理时经常会遇到的一些操作,主要包括如下函数：
 
--- 增加
-InsertIgnore 插入不重复元素
---删除
-DeleteByElement 根据元素删除(不会改变原有切片)
-DeleteByIndex 根据下标范围删除，也可以只删除单个下标位置的元素(不会改变原有切片)
+- **Copy** 安全复制
 
-Distinct 去重复(不会改变原有切片，(元素个数较大时会自动切换为利用hash算法)
+- **Contains** 判断是否包含
 
-Copy 安全复制
+- **InsertIgnore** 插入不重复元素
 
---集合相关操作
-InnerJoin 内连接(元素个数较大时会自动切换为利用hash算法)
-Union 合并去重(元素个数较大时会自动切换为利用hash算法)
-NotIn 相减--返回mNotInN(元素个数较大时会自动切换为利用hash算法)
+- **DeleteByElement** 根据元素删除(不会改变原有切片)
+- **DeleteByIndex** 根据下标范围删除，也可以只删除单个下标位置的元素(不会改变原有切片)
 
-Left 返回左侧若干元素
-Right 返回右侧若干元素
+- **Distinct** 去重复(元素个数较大时会自动切换为hash算法)
 
--- 以下函数只改变切片本身，无返回值
-Reverse 倒序排列
-Shuffling 随机
-Sort 排序
+- **InnerJoin** 内连接(元素个数较大时会自动切换为hash算法)
+- **Union** 合并去重(元素个数较大时会自动切换为hash算法)
+- **NotIn** 相减--返回mNotInN(元素个数较大时会自动切换为hash算法)
 
-```
+- Left 返回左侧若干元素
+- Right 返回右侧若干元素
+
+- **Reverse** 倒序排列
+- **Shuffling** 随机
+- **Sort** 排序
+
 由于go暂时不支持泛型，所以目前是针对每一种基础类型都分别编写了所对应的相关函数。以string类型为列:
 
-```
+```go
 package main
 
 import (
@@ -182,11 +178,11 @@ func main() {
 	log.Println("m为:")
 	log.Println(m)
 }
-
 ```
+
 执行结果如下：
 
-```
+```go
 22:32:41 main.go:17: 原始m,n分别如下:
 22:32:41 main.go:18: m为:
 22:32:41 main.go:19: [a b c d e f a b c d e f 3 4 3 4]
@@ -279,4 +275,3 @@ func main() {
 22:32:41 main.go:151: m为:
 22:32:41 main.go:152: [a a 4 b 3 f 3 e c 4 d c d b f e]
 ```
-
