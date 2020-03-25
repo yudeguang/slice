@@ -5,7 +5,6 @@
 // You can obtain one at https://github.com/yudeguang/slice.
 package slice
 
-//Contains无需启用set，因为初始化成本已经高于遍历一次的成本
 //返回切片sli中是否包含单个元素v
 func Contains(s []interface{}, v interface{}) bool {
 	for i := range s {

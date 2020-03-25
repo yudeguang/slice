@@ -9,7 +9,6 @@ import (
 	"github.com/yudeguang/hashset"
 )
 
-//当数量较大时，一般大于1024左右set会有更高的效率
 //返回去重复后两个切片的交集
 func InnerJoin(m, n []interface{}) []interface{} {
 	if len(m) == 0 || len(n) == 0 {

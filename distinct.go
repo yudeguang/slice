@@ -7,7 +7,6 @@ package slice
 
 import "github.com/yudeguang/hashset"
 
-//当数量较大时，一般大于1024左右set会有更高的效率
 //返回去重复后的数据
 func Distinct(s []interface{}) []interface{} {
 	L := len(s)
