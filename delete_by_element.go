@@ -5,6 +5,7 @@
 // You can obtain one at https://github.com/yudeguang/slice.
 package slice
 
+//算出需删除的次数
 func fmtNum(num ...int) int {
 	if len(num) >= 1 {
 		return num[0]
