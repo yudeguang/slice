@@ -49,7 +49,7 @@ func DeleteByElement(s []interface{}, element interface{}, num ...int) []interfa
 //返回将s中删除前n个元素e后的切片，如果num不填，或者num<0会删除所有子元素e
 func DeleteByElementString(s []string, element string, num ...int) []string {
 	n := fmtNum(num...)
-	if len(s) == 0 || element == "" || n == 0 {
+	if len(s) == 0 || n == 0 {
 		return CopyString(s)
 	}
 	//全部删除
